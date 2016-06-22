@@ -459,6 +459,7 @@ extern "C" {
                                      cf: DBCFHandle,
                                      propname: *const c_char)
                                      -> *mut c_char;
+    pub fn rocksdb_options_set_info_log_level(db: DBOptions, level: c_int);
 }
 
 #[cfg(test)]

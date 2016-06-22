@@ -380,6 +380,12 @@ impl Options {
             }
         }
     }
+
+    pub fn set_info_log_level(&mut self, level: c_int) {
+        unsafe {
+            rocksdb_ffi::rocksdb_options_set_info_log_level(self.inner, level);
+        }
+    }
 }
 
 impl Default for WriteOptions {
